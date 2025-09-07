@@ -132,7 +132,7 @@ for i in range(10):
     lista3.append(lista2[i])
 
 # Mostrar resultado
-print("\nPrimeira lista:", lista1) 
+print("\nPrimeira lista:", lista1)  
 print("\nSegunda lista:",lista2)
 print("\nLista intercalada com 20 elementos:")
 print(lista3)
