@@ -1,4 +1,10 @@
-# Sistema de Locadora de Filmes Online 
+# Alunos: João Filipe 
+#         Ellen
+#         Italo Dias
+                        ### Atividade em grupo ###
+
+# Sistema de Locadora de Filmes Online
+#
 
 # Lista de filmes disponíveis
 filmes = [
@@ -14,7 +20,7 @@ locacoes = []
 
 # Loop principal do sistema
 while True:
-    print("\n🎬 LOCADORA DE FILMES ONLINE 🎬")
+    print("\n LOCADORA DE FILMES ONLINE ")
     print("1 - Listar filmes")
     print("2 - Locar filme")
     print("3 - Devolver filme")
@@ -23,7 +29,7 @@ while True:
 
     # Listar filmes
     if opcao == "1":
-        print("\n📽️ Lista de Filmes:")
+        print("\n Lista de Filmes:")
         for filme in filmes:
             if filme["disponivel"]:
                 status = "Disponível"
@@ -33,7 +39,7 @@ while True:
 
     # Locar filme
     elif opcao == "2":
-        print("\n📽️ Lista de Filmes para locação:")
+        print("\n Lista de Filmes para locação:")
         for filme in filmes:
             status = "Disponível" if filme["disponivel"] else "Indisponível"
             print(f"{filme['id']} - {filme['titulo']} ({status})")
@@ -47,16 +53,16 @@ while True:
                     filme["disponivel"] = False
                     dias = int(input("Por quantos dias deseja alugar? "))
                     locacoes.append({"id_filme": filme["id"], "dias": dias})
-                    print(f"✅ Você locou '{filme['titulo']}' por {dias} dias.")
+                    print(f"Você locou '{filme['titulo']}' por {dias} dias.")
                 else:
-                    print("⚠️ Filme indisponível no momento.")
+                    print("Filme indisponível no momento.")
         if not encontrado:
-            print("⚠️ Filme não encontrado.")
+            print(" Filme não encontrado.")
 
     # Devolver filme
     elif opcao == "3":
         if len(locacoes) == 0:
-            print("\n⚠️ Nenhum filme locado no momento.")
+            print("\n Nenhum filme locado no momento.")
         else:
             print("\nFilmes locados:")
             for loc in locacoes:
@@ -74,19 +80,19 @@ while True:
                             atraso = int(input("Quantos dias de atraso na devolução? "))
                             if atraso > 0:
                                 multa = atraso * 2.50
-                                print(f"⚠️ Devolução com {atraso} dias de atraso. Multa: R${multa:.2f}")
+                                print(f" Devolução com {atraso} dias de atraso. Multa: R${multa:.2f}")
                             else:
-                                print("✅ Filme devolvido sem atraso.")
+                                print(" Filme devolvido sem atraso.")
                             locacoes.remove(loc)
                             devolvido = True
                             break
             if not devolvido:
-                print("⚠️ Filme não encontrado na lista de locações.")
+                print(" Filme não encontrado na lista de locações.")
 
     # Encerrar sistema
     elif opcao == "4":
-        print("👋 Sistema encerrado. Obrigado por usar a Locadora Online!")
+        print(" Sistema encerrado. Obrigado por usar a Locadora Online!")
         break
 
     else:
-        print("⚠️ Opção inválida. Tente novamente.")
+        print(" Opção inválida. Tente novamente.")
